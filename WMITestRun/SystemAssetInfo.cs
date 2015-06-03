@@ -73,6 +73,38 @@ namespace WMITestRun // rename namespace at somepoint...
             }
         }
 
+        public SystemAssetInfo(string computerName, ConnectionOptions connectionOptions)
+        {
+            this._name = computerName;
+            ManagementScope scope = new ManagementScope("\\\\" + this._name + "\\root\\cimv2", connectionOptions);
+
+            this._good_connection = true;
+
+            try  // Putting this here because even if an exception happens, I want the object created.
+            {
+                Get_Asset(scope);
+                Get_Serial(scope);
+            }
+            catch (System.Runtime.InteropServices.COMException e)
+            {
+                this._good_connection = false;
+                this._asset = "Bad Connection";
+                this._serial = e.Message;
+            }
+            catch (System.UnauthorizedAccessException e)
+            {
+                this._good_connection = false;
+                this._asset = "Bad Login";
+                this._serial = e.Message;
+            }
+            catch (System.Exception e)
+            {
+                this._good_connection = false;
+                this._asset = e.ToString();
+                this._serial = e.Message;
+            }
+        }
+
         private void Get_Serial(ManagementScope scope)
         {
             ObjectQuery query = new ObjectQuery("SELECT * FROM Win32_BIOS");
@@ -98,12 +130,22 @@ namespace WMITestRun // rename namespace at somepoint...
         }
 
         // may want to implement threading with this method at some point...
-        static public List<SystemAssetInfo> CreateSAIList(params string[] computerNames)
+        static public List<SystemAssetInfo> CreateSAIList(string[] computerNames)
         {
             List<SystemAssetInfo> saiList = new List<SystemAssetInfo>();
             foreach (string computerName in computerNames)
             {
                 saiList.Add(new SystemAssetInfo(computerName));
+            }
+            return saiList;
+        }
+
+        static public List<SystemAssetInfo> CreateSAIList(string[] computerNames, ConnectionOptions connectionOptions)
+        {
+            List<SystemAssetInfo> saiList = new List<SystemAssetInfo>();
+            foreach (string computerName in computerNames)
+            {
+                saiList.Add(new SystemAssetInfo(computerName, connectionOptions));
             }
             return saiList;
         }
