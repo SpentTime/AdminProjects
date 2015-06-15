@@ -16,6 +16,7 @@ namespace WMITestRun
                                                  but I don't plan on keeping this a console application */
 
             List<SystemAssetInfo> sysAssetList = SystemAssetInfo.CreateSAIList(args, co);
+            sysAssetList.Sort();
             foreach (var sysAssetObj in sysAssetList)
             {
                 Console.WriteLine("{0} {1} {2}", sysAssetObj.Name, sysAssetObj.Serial, sysAssetObj.Asset);
