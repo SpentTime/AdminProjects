@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace WMITestRun // rename namespace at somepoint...
 {
-    class SystemAssetInfo : IComparable<SystemAssetInfo> // not sure if I want a class or a struct here
+    class SystemAssetInfo : IComparable<SystemAssetInfo>
     {
         public string Name { get; private set; }
         public string Serial { get; private set; }
