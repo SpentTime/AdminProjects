@@ -1,10 +1,11 @@
-﻿using System.Management;
+﻿using System;
+using System.Management;
 using System.Threading;
 using System.Collections.Generic;
 
 namespace WMITestRun // rename namespace at somepoint...
 {
-    class SystemAssetInfo  // not sure if I want a class or a struct here
+    class SystemAssetInfo : IComparable<SystemAssetInfo> // not sure if I want a class or a struct here
     {
         public string Name { get; private set; }
         public string Serial { get; private set; }
@@ -125,6 +126,12 @@ namespace WMITestRun // rename namespace at somepoint...
             }
             foreach (var thread in tList) { thread.Join(); }
             return saiList;
+        }
+
+        //This is so that this can be sorted by name.
+        int IComparable<SystemAssetInfo>.CompareTo(SystemAssetInfo other)
+        {
+            return this.Name.CompareTo(other.Name);
         }
     }
 }
