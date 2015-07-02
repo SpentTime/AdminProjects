@@ -9,10 +9,11 @@ namespace WMITestRun
         static void Main(string[] args)
         {
             ConnectionOptions co = new ConnectionOptions();
-            Console.WriteLine("Username :");
+            Console.Write("Username: ");
             co.Username = Console.ReadLine();
             Console.Write("Password: ");
             co.Password = silientInput();
+            Console.WriteLine();
 
             List<SystemAssetInfo> sysAssetList = SystemAssetInfo.CreateSAIList(args, co);
             sysAssetList.Sort();
@@ -32,7 +33,7 @@ namespace WMITestRun
             {
                 if (ckinfo.Key == ConsoleKey.Backspace && temp.Length > 0)
                     temp.Remove(temp.Length - 1);
-                else if (ckinfo.KeyChar > 31 && ckinfo.KeyChar < 127)
+                else
                     temp += ckinfo.KeyChar;
 
                 ckinfo = Console.ReadKey(true);
