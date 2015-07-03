@@ -15,20 +15,19 @@ namespace QDAudit
         public Form1()
         {
             InitializeComponent();
-
-            //Code to be removed later.
-            
-            //end test code
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            string [] computerNames = Utilities.GetNamesFromFile(openFileDialog1.FileName);
-            List<SystemAssetInfo> saiList = SystemAssetInfo.CreateSAIList(computerNames);
-            DataTable table = SystemAssetInfo.ConvertSAIListToDataSource(saiList);
-            dataGridView1.DataSource = table;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string[] computerNames = Utilities.GetNamesFromFile(openFileDialog1.FileName);
+                List<SystemAssetInfo> saiList = SystemAssetInfo.CreateSAIList(computerNames);
+                DataTable table = SystemAssetInfo.ConvertSAIListToDataSource(saiList);
+                dataGridView1.DataSource = table;
+            }
         }
+        
 
 
 

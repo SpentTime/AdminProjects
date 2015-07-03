@@ -69,21 +69,21 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem2.Text = "Import";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.DefaultExt = "txt";
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "\"Text Files (.txt)|*.txt|All Files (*.*)|*.*\"";
             // 
             // Form1
             // 
