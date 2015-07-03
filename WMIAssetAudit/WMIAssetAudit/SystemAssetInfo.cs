@@ -2,10 +2,12 @@
 using System.Management;
 using System.Threading;
 using System.Collections.Generic;
+using System.Data;
 
-namespace WMITestRun // rename namespace at somepoint...
+namespace QDAudit
 {
-    class SystemAssetInfo : IComparable<SystemAssetInfo>
+    //This contains info directly related to class SystemAssetInfo
+    partial class SystemAssetInfo : IComparable<SystemAssetInfo>
     {
         public string Name { get; private set; }
         public string Serial { get; private set; }
@@ -102,36 +104,15 @@ namespace WMITestRun // rename namespace at somepoint...
             }
         }
 
-        static public List<SystemAssetInfo> CreateSAIList(string[] computerNames)
-        {
-            List<SystemAssetInfo> saiList = new List<SystemAssetInfo>();
-            List<Thread> tList = new List<Thread>();
-            foreach (string computerName in computerNames)
-            {
-                tList.Add(new Thread(() => saiList.Add(new SystemAssetInfo(computerName))));
-                tList[tList.Count - 1].Start();
-            }
-            foreach (var thread in tList) { thread.Join(); }
-            return saiList;
-        }
-
-        static public List<SystemAssetInfo> CreateSAIList(string[] computerNames, ConnectionOptions connectionOptions)
-        {
-            List<SystemAssetInfo> saiList = new List<SystemAssetInfo>();
-            List<Thread> tList = new List<Thread>();
-            foreach (string computerName in computerNames)
-            {
-                tList.Add(new Thread(() => saiList.Add(new SystemAssetInfo(computerName, connectionOptions))));
-                tList[tList.Count - 1].Start();
-            }
-            foreach (var thread in tList) { thread.Join(); }
-            return saiList;
-        }
+        
 
         //This is so that this can be sorted by name.
         int IComparable<SystemAssetInfo>.CompareTo(SystemAssetInfo other)
         {
             return this.Name.CompareTo(other.Name);
         }
+
+        // Converting to DataTable before changing datasource
+        
     }
 }

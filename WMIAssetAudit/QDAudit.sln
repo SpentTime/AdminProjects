@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMITestRun", "WMITestRun\WMITestRun.csproj", "{465641EB-FB4D-4EDA-8504-4D90126EEC7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QDAudit", "WMIAssetAudit\QDAudit.csproj", "{E7831E0D-1B00-4DDC-B7B5-98CBE9F2FC60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{465641EB-FB4D-4EDA-8504-4D90126EEC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{465641EB-FB4D-4EDA-8504-4D90126EEC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{465641EB-FB4D-4EDA-8504-4D90126EEC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{465641EB-FB4D-4EDA-8504-4D90126EEC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7831E0D-1B00-4DDC-B7B5-98CBE9F2FC60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7831E0D-1B00-4DDC-B7B5-98CBE9F2FC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7831E0D-1B00-4DDC-B7B5-98CBE9F2FC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7831E0D-1B00-4DDC-B7B5-98CBE9F2FC60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

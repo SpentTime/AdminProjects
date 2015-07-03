@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WMITestRun")]
+[assembly: AssemblyTitle("WMIAssetAudit")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WMITestRun")]
+[assembly: AssemblyProduct("WMIAssetAudit")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8b028817-6c93-4f22-99be-b765b0471da5")]
+[assembly: Guid("0fe3889f-540b-4925-b456-c68f394bfcb3")]
 
 // Version information for an assembly consists of the following four values:
 //
