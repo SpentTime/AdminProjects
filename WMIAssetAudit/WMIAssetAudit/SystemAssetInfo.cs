@@ -104,15 +104,9 @@ namespace QDAudit
             }
         }
 
-        
-
-        //This is so that this can be sorted by name.
         int IComparable<SystemAssetInfo>.CompareTo(SystemAssetInfo other)
         {
             return this.Name.CompareTo(other.Name);
         }
-
-        // Converting to DataTable before changing datasource
-        
     }
 }
