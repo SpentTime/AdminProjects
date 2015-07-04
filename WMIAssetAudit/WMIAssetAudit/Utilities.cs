@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Data;
 
 namespace QDAudit
 {
@@ -18,6 +19,13 @@ namespace QDAudit
                     computerList.Add(sr.ReadLine());
 
             return computerList.ToArray();
+        }
+
+        static public void ConvertSAIListToDataSource(List<SystemAssetInfo> sysAssetList, DataTable table)
+        {
+            table.Rows.Clear();
+            foreach (SystemAssetInfo devInfo in sysAssetList)
+                table.Rows.Add(devInfo.Name, devInfo.Asset, devInfo.Serial);
         }
     }
 }
