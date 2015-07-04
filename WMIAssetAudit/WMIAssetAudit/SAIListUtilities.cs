@@ -36,18 +36,5 @@ namespace QDAudit
             foreach (var thread in tList) { thread.Join(); }
             return saiList;
         }
-
-        static public DataTable ConvertSAIListToDataSource(List<SystemAssetInfo> sysAssetList)
-        {
-            DataTable table = new DataTable();
-            table.Columns.Add("Name", typeof(string));
-            table.Columns.Add("Asset", typeof(string));
-            table.Columns.Add("Serial", typeof(string));
-
-            foreach (SystemAssetInfo devInfo in sysAssetList)
-                table.Rows.Add(devInfo.Name, devInfo.Asset, devInfo.Serial);
-
-            return table;
-        }
     }
 }
