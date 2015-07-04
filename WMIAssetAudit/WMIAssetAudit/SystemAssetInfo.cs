@@ -19,12 +19,13 @@ namespace QDAudit
         public SystemAssetInfo(string computerName)
         {
             this.Name = computerName;
-            ManagementScope scope = new ManagementScope("\\\\" + this.Name + "\\root\\cimv2");
-
-            this.GoodConnection = true;
-
+            
             try  // Putting this here because even if an exception happens, I want the object created.
             {
+                ManagementScope scope = new ManagementScope("\\\\" + this.Name + "\\root\\cimv2");
+
+                this.GoodConnection = true;
+
                 Get_Asset(scope);
                 Get_Serial(scope);
             }
@@ -51,12 +52,13 @@ namespace QDAudit
         public SystemAssetInfo(string computerName, ConnectionOptions connectionOptions)
         {
             this.Name = computerName;
-            ManagementScope scope = new ManagementScope("\\\\" + this.Name + "\\root\\cimv2", connectionOptions);
-
-            this.GoodConnection = true;
-
+            
             try  // Putting this here because even if an exception happens, I want the object created.
             {
+                ManagementScope scope = new ManagementScope("\\\\" + this.Name + "\\root\\cimv2", connectionOptions);
+
+                this.GoodConnection = true;
+
                 Get_Asset(scope);
                 Get_Serial(scope);
             }
