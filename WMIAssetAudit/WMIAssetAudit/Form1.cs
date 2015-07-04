@@ -25,7 +25,7 @@ namespace QDAudit
             this.dataGridView1.DataSource = this._table;
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -33,6 +33,7 @@ namespace QDAudit
                 List<SystemAssetInfo> saiList = SystemAssetInfo.CreateSAIList(computerNames);
                 Utilities.ConvertSAIListToDataSource(saiList, this._table);
             }
+
         }
         
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
